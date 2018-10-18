@@ -1,6 +1,10 @@
 import random
 
+# normal and binary search for a randomnly generated list of numbers
+
 #######################
+
+# normal search
 
 def search(test,n):
  for i in test:
@@ -10,29 +14,38 @@ def search(test,n):
 
 #######################
 
+# binary search
+
 def bin_search(test,n):
  start_i=0
  end_i=len(test)-1
  max=test[end_i]
  
+# the next two lines are just to avoid the search in case the number is too high
+ 
  if n > max:
-  return False
-
+  return False 
+ 
  while start_i <= end_i:
 
   middle_i=int((end_i-start_i)/2)
   middle_i=middle_i+start_i
 
-  middle_n=test[middle_i]
-
-  print("Start ", start_i," End ", end_i," middle ", middle_i," value of middle ", middle_n)
+# as an alternative for the above division, one can use (end_i-start_i)//2
   
+  middle_n=test[middle_i]  
+  
+# this print line, now commented, is to verify which steps the binary search takes  
+# print("Start ", start_i," End ", end_i," middle ", middle_i," value of middle ", middle_n)
+
+# the next if cycle is to avoid oscillations when the search is on lenght of 2
+
   if end_i-start_i <= 1:
    if end_i == n:
     return True
    elif start_i == n:
     return True
-   return False
+   return False 
  
   if middle_n < n:
    start_i=middle_i
