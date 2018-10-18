@@ -1,5 +1,9 @@
 import random
 
+# this script is not finished
+# it works perfectly for strong and weak passwords but I had not the time to generate neither
+# medium passwords neither to generate them in a nice fashion
+
 base_l="abcdefghilmopqrstuvzxykwj"
 base_L="ABCDEFGHILMOPQRSTUVZXYKWJ"
 base_n="0123456789"
