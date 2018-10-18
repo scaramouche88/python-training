@@ -1,6 +1,9 @@
 import random
 from numpy.random import randint
 
+# the function verifies how many "cows" and "bulls" are there
+# since functions cannot return lists, it returns two values that are merged into a list afterwards
+
 def mastermind(number,guess):
  for i in range(len(number)):
   place_count=0
@@ -18,12 +21,13 @@ number=random.sample(list_number,4)
 
 #print("The solution is:")
 #print(number)
-#print("\n")
 
 print("WELCOME TO MASTERMIND - by G.F.G.\n")
 
 print("Give me four number as your guess (NOT separated by spaces): ")
 guess = [int(x) for x in str(input())]
+
+# the next 3 lines are redundant with those at the end - to be improved
 
 if len(number)!=len(guess):
  print("You have not understood the rules of the game: you need to guess FOUR numbers!")
