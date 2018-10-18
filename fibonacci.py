@@ -1,3 +1,5 @@
+# generates Fibonacci's sequences with a specific lenght
+
 def fibonacci(fib):
  fib.append(fib[-1]+fib[-2])
  return fib
