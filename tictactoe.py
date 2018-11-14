@@ -1,6 +1,12 @@
 from tabulate import tabulate
 import numpy
 
+####################################################################
+# verify that the move is of 2 numbers, that it is in the board and
+# that it do not erase an already occupied position
+# in all cases it quits!
+####################################################################
+
 def valid_input(move,game):
  if len(move) != 2:
   print("Wrong format!")
@@ -16,6 +22,10 @@ def valid_input(move,game):
   print("(Everybody knows the rules of Tic-tac-toe!)")
   return False
 
+###############################################
+# function that prints the board game each time
+###############################################
+ 
 def display_board(table):
  graph_table=[(['-']*3) for i in range(3)]
  for i in [0,1,2]:
@@ -26,6 +36,10 @@ def display_board(table):
     graph_table[i][j] = "O"
  print(tabulate(graph_table,tablefmt="fancy_grid"))
 
+###############################################
+# function that check for winners by line
+###############################################
+ 
 def check_line(game):
  for i in range(3):
   set_line=set(game[i])
@@ -33,6 +47,10 @@ def check_line(game):
    return 1
   return 0
 
+###############################################
+# function that check for winners by diagonal
+###############################################
+ 
 def check_diag(game):
  if game[1][1] != 0:
   diag1=set([game[0][0],game[1][1],game[2][2]])
